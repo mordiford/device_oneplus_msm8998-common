@@ -5,13 +5,13 @@
     "branch": "lineage-15.1"
   },
   {
-    "repository": "AICP/device_oppo_common",
-    "target_path": "device/oppo/common",
-    "branch": "o8.1"
+    "repository": "mordiford/sora-op5-kernel",
+    "target_path": "kernel/oneplus/msm8998",
+    "branch": "sora-v1"
   },
   {
-    "repository": "AICP/kernel_oneplus_msm8998",
-    "target_path": "kernel/oneplus/msm8998",
+    "repository": "AICP/device_oppo_common",
+    "target_path": "device/oppo/common",
     "branch": "o8.1"
   },
   {
