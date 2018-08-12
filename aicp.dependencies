@@ -5,9 +5,9 @@
     "branch": "lineage-15.1"
   },
   {
-    "repository": "mordiford/sora-op5-kernel",
-    "target_path": "kernel/oneplus/msm8998",
-    "branch": "sora-v1"
+    "repository": "Singularity-Kernel/Singularity",
+    "target_path": "kernel/oneplus/Singularity",
+    "branch": "eas"
   },
   {
     "repository": "AICP/device_oppo_common",
