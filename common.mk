@@ -244,6 +244,7 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
+    android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0-java
 
@@ -374,6 +375,10 @@ PRODUCT_PACKAGES += \
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_oneplus
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/recovery/root/init.recovery.qcom.usb.rc:root/init.recovery.qcom.usb.rc
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
