@@ -87,8 +87,11 @@ persist.data.netmgrd.qos.enable=true
 persist.data.mode=concurrent
 
 # DPM
-# OOS: 9 = enable FD , TCM , disable CT , NSRM
-persist.vendor.dpm.feature=11
+# 4  enable NSRM adb root
+# 1  Only CnE is enabled; NSRM, FMC, and WQE are disabled
+# 0  Disables
+# 9  enable FD , TCM , disable CT , NSRM
+persist.vendor.dpm.feature=9
 
 # DRM
 drm.service.enabled=true
@@ -97,6 +100,7 @@ drm.service.enabled=true
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # Graphics
+debug.sf.disable_backpressure=1
 debug.sf.hw=1
 debug.gralloc.enable_fb_ubwc=1
 debug.gralloc.gfx_ubwc_disable=0
@@ -213,6 +217,8 @@ persist.radio.is_wps_enabled=true
 persist.radio.videopause.mode=1
 persist.radio.sap_silent_pin=1
 persist.vendor.radio.add_power_save=1
+
+# RCS service
 persist.rcs.supported=0
 
 # RmNet Data
