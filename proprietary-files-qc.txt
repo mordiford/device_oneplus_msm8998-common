@@ -960,10 +960,12 @@ vendor/etc/init/qcrild.rc
 etc/permissions/embms.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
+etc/permissions/qti_telephony_common.xml
 etc/permissions/telephonyservice.xml
 framework/embmslibrary.jar
 framework/qcnvitems.jar
 framework/qcrilhook.jar
+framework/qti-telephony-common.jar
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
@@ -1016,7 +1018,7 @@ vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
 vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
--priv-app/ims/ims.apk|c401289f49fb2ca00ef6a8f6e307b70897c7a1df
+-priv-app/ims/ims.apk
 -app/imssettings/imssettings.apk
 etc/permissions/com.qualcomm.qti.imscmservice.xml
 etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml

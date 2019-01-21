@@ -200,7 +200,7 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    OneplusDoze
+    Doze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -371,7 +371,10 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service-qti
+    android.hardware.power@1.2-service.msm8998-libperfmgr
+
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
@@ -410,7 +413,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    qti-telephony-common \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \

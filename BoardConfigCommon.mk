@@ -66,10 +66,10 @@ TARGET_2ND_CPU_VARIANT := cortex-a73
 
 TARGET_USES_UEFI := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 
-BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 
 BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=2048 androidboot.usbconfigfs=true 
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 
 BOARD_KERNEL_CMDLINE += androidboot.configfs=true
@@ -84,8 +84,12 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
-TARGET_KERNEL_CONFIG := lineage_oneplus5_defconfig
+TARGET_KERNEL_CONFIG := aicp_oneplus5_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := 8.0.7
+KBUILD_COMPILER_STRING := Android (5220042 based on r346389c) clang version 8.0.7
+export KBUILD_COMPILER_STRING
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -216,10 +220,12 @@ TARGET_ENABLE_MEDIADRM_64 := true
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
       WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_DEBUG_INFO := false
+      USE_DEX2OAT_DEBUG := false
+      DONT_DEXPREOPT_PREBUILTS := true
+      WITH_DEXPREOPT_PIC := true
       WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-    endif
   endif
 endif
 
@@ -241,6 +247,9 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 TARGET_INIT_VENDOR_LIB := libinit_oneplus_msm8998
 TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus_msm8998
+
+# IPA
+USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true

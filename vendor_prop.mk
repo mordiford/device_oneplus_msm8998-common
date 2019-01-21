@@ -18,6 +18,15 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.aanc.enable=true
 
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-filter=speed \
+    dalvik.vm.image-dex2oat-filter=speed \
+    ro.vendor.qti.am.reschedule_service=true \
+    ro.sys.fw.dex2oat_thread_count=8 \
+    dalvik.vm.boot-dex2oat-threads=8 \
+    dalvik.vm.dex2oat-threads=8
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=2 \
@@ -124,6 +133,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.use_buffer_age=false \
+    debug.sf.early_phase_offset_ns=5000000 \
     debug.gralloc.enable_fb_ubwc=1 \
     ro.sf.lcd_density=420 \
     ro.opengles.version=196610 \
@@ -189,7 +200,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
     ro.am.reschedule_service=true \
     sched.colocate.enable=1 \
-    sys.games.gt.prof=1
+    sys.games.gt.prof=1 \
+    sdm.debug.rotator_downscale=1
 
 # QSEE
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -314,3 +326,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wi-Fi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
+
+# Boot
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.vendor.shutdown.waittime=500
