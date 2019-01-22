@@ -39,7 +39,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.min.duration.secs=30 \
     persist.dirac.acs.controller=qem \
     ro.dirac.acs.storeSettings=1 \
-    ro.dirac.ignore_error=1
+    ro.dirac.ignore_error=1 \
+    tunnel.audio.encode=true
 
 # Audio new
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -106,6 +107,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
 
+# Connor
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.connor.disable=0
+
 # Core control
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.core_ctl_min_cpu=2 \
@@ -162,6 +167,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.overlay.izat.optin=rro
 
+# IOP
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.iop.enable_uxe=0 \
+    vendor.iop.enable_prefetch_ofr=0
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-player=true \
@@ -214,7 +224,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # QTI
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.at_library=libqti-at.so \
-    ro.vendor.gt_library=libqti-gt.so
+    ro.vendor.gt_library=libqti-gt.so \
+    ro.vendor.qti.sys.fw.bg_apps_limit=60 \
+    ro.vendor.qti.sys.fw.bservice_enable=true \
+    ro.vendor.qti.sys.fw.bservice_limit=5 \
+    ro.vendor.qti.sys.fw.bservice_age=5000
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -237,6 +251,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.ROTATION_ENABLE=1 \
     persist.radio.sap_silent_pin=1 \
     persist.radio.sib16_support=1 \
+    persist.vendor.radio.bar_fake_gcell=1 \
+    persist.vendor.radio.arfcn_test_mode=3 \
     persist.radio.start_ota_daemon=0 \
     persist.radio.sw_mbn_update=0 \
     persist.radio.videopause.mode=1 \
@@ -284,7 +300,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.mux_count=8 \
     persist.data.df.iwlan_mux=9 \
     persist.data.df.dev_name=rmnet_usb0 \
-    persist.data.iwlan.enable=true
+    persist.vendor.data.iwlan.enable=true
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
