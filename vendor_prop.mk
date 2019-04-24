@@ -90,7 +90,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.aux.packagelist=com.oneplus.camera,org.lineageos.snap,com.google.android.Pixel2ModUrnyx05 \
     persist.camera.mobicat=2 \
     persist.camera.stats.debugexif=3080192 \
-    persist.ts.rtmakeup=false
+    persist.ts.rtmakeup=false \
+    persist.vendor.camera.tintless.skip=1
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -139,7 +140,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.disable_wb_ubwc=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=0 \
-    vendor.display.perf_hint_window=50
+    vendor.display.perf_hint_window=50 \
+    debug.hwui.use_buffer_age=false
 
 # IOP
 PRODUCT_PROPERTY_OVERRIDES += \
